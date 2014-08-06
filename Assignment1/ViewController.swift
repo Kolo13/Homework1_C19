@@ -1,4 +1,4 @@
-//
+    //
 //  ViewController.swift
 //  Assignment1
 //
@@ -9,11 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+    
+    @IBOutlet weak var myButton: UIButton!
+    @IBOutlet weak var firstSwitch: UISwitch!
+    @IBOutlet weak var firstSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        firstSlider.value = 0.0
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -21,5 +26,18 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func onClick(sender: UIButton) {
+        println("Button")
+    }
+    
+    @IBAction func onSwitch(sender: UISwitch) {
+        println("Switch")
+    }
+    
+    @IBAction func onSlidePastHalf(sender: UISlider) {
+        if firstSlider.value > 0.5 {
+            println("Slide past half way")
+        }
+    }
 }
 
